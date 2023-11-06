@@ -15,27 +15,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Spinner
-        android:id="@+id/language"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/ic_language"
-        android:popupBackground="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#A3323063"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <Spinner
-        android:id="@+id/languageSpinner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/ChangeLang"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -45,6 +37,7 @@
         android:popupBackground="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="150dp"
@@ -84,7 +77,7 @@
         android:layout_height="50dp"
         android:background="@drawable/roundshape2"
         android:fontFamily="serif"
-        android:text="Sign In"
+        android:text="@string/SIGN_IN"
         android:layout_marginTop="80dp"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -98,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/guidelineTop"
-        android:text="Or"
+        android:text="@string/Or"
         android:drawableStart="@drawable/line"
         android:drawableEnd="@drawable/line"
         android:layout_marginTop="145dp"
@@ -117,7 +110,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="255dp"
         android:fontFamily="serif"
-        android:text="Sign Up"
+        android:text="@string/SIGN_UP"
         android:background="@drawable/roundshape2"
         android:textSize="18sp"
         android:textStyle="bold"
