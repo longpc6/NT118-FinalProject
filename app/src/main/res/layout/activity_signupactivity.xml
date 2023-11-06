@@ -9,13 +9,25 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#A3323063"
+        android:background="#742C3F87"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="56dp"
+        android:layout_gravity="top"
+        android:indeterminate="true"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,6 +87,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewTitle"
         app:layout_constraintVertical_bias="0.5" />
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customedittext"
+        android:drawableStart="@drawable/ic_person"
+        android:hint="Email"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -85,10 +110,10 @@
         android:drawableStart="@drawable/ic_password"
         android:drawableEnd="@drawable/ic_eyes"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintBottom_toTopOf="@id/buttonSignUp"
+
+        app:layout_constraintBottom_toTopOf="@id/editConfirmpass"
         app:layout_constraintEnd_toEndOf="parent" />
     <EditText
         android:id="@+id/editConfirmpass"
@@ -119,4 +144,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

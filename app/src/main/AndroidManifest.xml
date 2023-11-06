@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IndoorAirQualityMonitoringApp"
         tools:targetApi="31">
+        <activity
+            android:name=".web"
+            android:exported="false" />
+        <activity
+            android:name=".signinactivity"
+            android:exported="false" />
+        <activity
+            android:name=".forgotpassword"
+            android:exported="false" />
         <activity
             android:name=".dashboard"
             android:exported="false" />
