@@ -3,7 +3,9 @@ package com.example.indoorairqualitymonitoringapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -27,22 +29,25 @@ public class Loginactivity extends AppCompatActivity {
     private CheckBox rememberMeCheckbox;
     private SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "LoginPrefs";
-    private Button forgotPasswordButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginactivity);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         editTextuserName = findViewById(R.id.editTextUsername);
         editTextpassword = findViewById(R.id.editTextPassword);
         signinButton = findViewById(R.id.buttonLogin);
         rememberMeCheckbox = findViewById(R.id.checkboxRememberMe);
-        forgotPasswordButton = findViewById(R.id.buttonForgotPassword);
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+
         String savedUsername = sharedPreferences.getString("username", "");
         String savedPassword = sharedPreferences.getString("password", "");
+
         editTextuserName.setText(savedUsername);
         editTextpassword.setText(savedPassword);
         rememberMeCheckbox.setChecked(!savedUsername.isEmpty() && !savedPassword.isEmpty());
@@ -55,13 +60,18 @@ public class Loginactivity extends AppCompatActivity {
                 if(isValid(username,password)){
                     loginWithToken(username, password);
                 }else{
-                    Toast.makeText(Loginactivity.this,"Nhap mat khau hop le",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Loginactivity.this,"Login failed",Toast.LENGTH_SHORT).show();
                 }
+
+                signinButton.setBackgroundColor(Color.parseColor("#841FAF"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        signinButton.setBackgroundColor(Color.parseColor("#835E35B1"));
+                    }
+                }, 500);
             }
         });
-        //loginWithToken();
-
-
     }
 
     private boolean isValid(String username, String password) {
@@ -89,7 +99,7 @@ public class Loginactivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else {
-                    Toast.makeText(Loginactivity.this, "dang nhap khong thanh cong!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Loginactivity.this, "Login failed", Toast.LENGTH_SHORT).show();
 
                 }
             }

@@ -16,7 +16,6 @@ public class dashboard extends AppCompatActivity {
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xử lý sự kiện khi nhấn nút Sign out
                 signOut();
             }
         });

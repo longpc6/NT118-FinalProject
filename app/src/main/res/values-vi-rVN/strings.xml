@@ -8,6 +8,8 @@
     <string name="Remember_Me">Nhớ mật Khẩu</string>
     <string name="Continue_with_google">Đăng nhập bằng Google</string>
     <string name="Or">Hoặc</string>
-    <string name="SIGN_UP">Đăng kí</string>
+    <string name="SIGN_UP">ĐĂNG KÝ</string>
     <string name="Confirm_Password">Xác nhận mật khẩu</string>
+    <string name="btn_SignIn">Đăng nhập</string>
+    <string name="btn_SignUp">Đăng ký</string>
 </resources>

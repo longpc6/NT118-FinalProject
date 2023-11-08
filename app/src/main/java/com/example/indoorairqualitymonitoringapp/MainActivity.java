@@ -14,8 +14,10 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ShareActionProvider;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,7 +27,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     private Button signInButton;
     private Button signUpButton;
-    private Button btnchangelang;
+    private ImageButton btnchangelang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                signInButton.setBackgroundColor(Color.parseColor("#841FAF"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        signInButton.setBackgroundColor(Color.parseColor("#835E35B1"));
+                    }
+                }, 500);
+
                 Intent intent = new Intent(MainActivity.this, Loginactivity.class);
                 startActivity(intent);
             }
@@ -43,12 +53,20 @@ public class MainActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                signUpButton.setBackgroundColor(Color.parseColor("#841FAF"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        signUpButton.setBackgroundColor(Color.parseColor("#835E35B1"));
+                    }
+                }, 500);
+
                 Intent intent = new Intent(MainActivity.this, Signupactivity.class);
                 startActivity(intent);
             }
         });
 
-        btnchangelang=findViewById(R.id.ChangeLang);
+        btnchangelang=findViewById(R.id.Changelanguage);
         btnchangelang.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -9,4 +9,6 @@
     <string name="Or">Or</string>
     <string name="SIGN_UP">SIGN UP</string>
     <string name="Confirm_Password">Confirm Password</string>
+    <string name="btn_SignIn">Sign in</string>
+    <string name="btn_SignUp">Sign up</string>
 </resources>

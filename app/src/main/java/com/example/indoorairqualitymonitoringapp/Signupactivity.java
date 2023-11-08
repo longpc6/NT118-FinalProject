@@ -2,7 +2,9 @@ package com.example.indoorairqualitymonitoringapp;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -46,6 +48,13 @@ public class Signupactivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SignUpFunc();
+                buttonSignUp.setBackgroundColor(Color.parseColor("#841FAF"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        buttonSignUp.setBackgroundColor(Color.parseColor("#835E35B1"));
+                    }
+                }, 500);
             }
         });
     }
