@@ -48,6 +48,7 @@ public class Signupactivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SignUpFunc();
+
                 buttonSignUp.setBackgroundColor(Color.parseColor("#841FAF"));
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -60,13 +61,31 @@ public class Signupactivity extends AppCompatActivity {
     }
 
     private void SignUpFunc() {
-        Intent intent =new Intent(Signupactivity.this, WebViewActivity.class);
-        Bundle extras = new Bundle();
-
         String username = editTextUsername.getText().toString();
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
         String confirmPassword = editPassConfirm.getText().toString();
+
+        int signal = ValidationUtil(username, email, password, confirmPassword);
+        switch (signal) {
+            case 1:
+                Toast.makeText(Signupactivity.this, "Please fill in the blank", Toast.LENGTH_SHORT).show();
+                return;
+            case 2:
+                Toast.makeText(Signupactivity.this, "Invalid username", Toast.LENGTH_SHORT).show();
+                return;
+            case 3:
+                Toast.makeText(Signupactivity.this, "Invalid email", Toast.LENGTH_SHORT).show();
+                return;
+            case 4:
+                Toast.makeText(Signupactivity.this, "the confirmed-password doesn't match", Toast.LENGTH_SHORT).show();
+                return;
+            default:
+                break;
+        }
+
+        Intent intent =new Intent(Signupactivity.this, WebViewActivity.class);
+        Bundle extras = new Bundle();
 
         extras.putString("USERNAME", username);
         extras.putString("EMAIL", email);
@@ -76,6 +95,23 @@ public class Signupactivity extends AppCompatActivity {
         intent.putExtras(extras);
         startActivity(intent);
     }
+
+    private int ValidationUtil(String username, String email, String password, String confirmPass) {
+        int index = email.indexOf("@");
+        String emailDomain = email.substring(index + 1);
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPass.isEmpty())
+            return 1;
+        else if (username.contains(" "))
+            return 2;
+        else if (!email.contains("@") || email.contains(" "))
+            return 3;
+        else if (!emailDomain.contains("."))
+            return 3;
+        else if (!password.equals(confirmPass))
+            return 4;
+        return 0;
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
