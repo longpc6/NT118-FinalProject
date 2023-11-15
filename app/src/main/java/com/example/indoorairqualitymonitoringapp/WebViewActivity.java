@@ -55,7 +55,7 @@ public class WebViewActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-                    if (url.contains("register-error"))
+                    if (url.contains("execution"))
                         Toast.makeText(WebViewActivity.this, "error!", Toast.LENGTH_SHORT).show();
                 }
                 super.onPageFinished(view, url);

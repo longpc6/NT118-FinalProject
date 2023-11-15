@@ -4,12 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.CheckBox;
 import androidx.appcompat.widget.Toolbar;
@@ -28,7 +33,11 @@ public class Loginactivity extends AppCompatActivity {
     private Button signinButton;
     private CheckBox rememberMeCheckbox;
     private SharedPreferences sharedPreferences;
+
+    private ImageButton passwordToggleButton ;
     private static final String PREFS_NAME = "LoginPrefs";
+
+    private boolean passwordVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,7 @@ public class Loginactivity extends AppCompatActivity {
         signinButton = findViewById(R.id.buttonLogin);
         rememberMeCheckbox = findViewById(R.id.checkboxRememberMe);
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        passwordToggleButton  = findViewById(R.id.img_btn_showPasswordSignIn);
 
         String savedUsername = sharedPreferences.getString("username", "");
         String savedPassword = sharedPreferences.getString("password", "");
@@ -72,6 +82,22 @@ public class Loginactivity extends AppCompatActivity {
                 }, 500);
             }
         });
+
+        passwordToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!editTextpassword.getText().toString().isEmpty()) {
+                    if (editTextpassword.getTransformationMethod() == PasswordTransformationMethod.getInstance()) {
+                        editTextpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_24);
+                    } else {
+                        editTextpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_off_24);
+                    }
+                }
+            }
+        });
+
     }
 
     private boolean isValid(String username, String password) {

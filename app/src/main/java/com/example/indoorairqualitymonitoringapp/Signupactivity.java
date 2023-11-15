@@ -5,12 +5,15 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -26,6 +29,8 @@ public class Signupactivity extends AppCompatActivity {
     private EditText editTextPassword;
     private EditText editPassConfirm;
     private Button buttonSignUp;
+
+    private ImageButton passwordToggleButton, confirmToggleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class Signupactivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editPassConfirm = findViewById(R.id.editConfirmpass);
         buttonSignUp = findViewById(R.id.buttonSignUp);
+        passwordToggleButton = findViewById(R.id.img_btn_showPasswordSignUp);
+        confirmToggleButton = findViewById(R.id.img_btn_showConfirmSignUp);
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +63,36 @@ public class Signupactivity extends AppCompatActivity {
                         buttonSignUp.setBackgroundColor(Color.parseColor("#835E35B1"));
                     }
                 }, 500);
+            }
+        });
+
+        passwordToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!editTextPassword.getText().toString().isEmpty()) {
+                    if (editTextPassword.getTransformationMethod() == PasswordTransformationMethod.getInstance()) {
+                        editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_24);
+                    } else {
+                        editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_off_24);
+                    }
+                }
+            }
+        });
+
+        confirmToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!editPassConfirm.getText().toString().isEmpty()) {
+                    if (editPassConfirm.getTransformationMethod() == PasswordTransformationMethod.getInstance()) {
+                        editPassConfirm.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_24);
+                    } else {
+                        editPassConfirm.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        passwordToggleButton.setImageResource(R.drawable.baseline_visibility_off_24);
+                    }
+                }
             }
         });
     }

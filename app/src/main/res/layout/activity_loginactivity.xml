@@ -18,18 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/roundshape1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -87,12 +89,21 @@
         android:background="@drawable/customedittext"
         android:hint="@string/Password"
         android:drawableStart="@drawable/ic_password"
-        android:drawableEnd="@drawable/ic_eyes"
         android:inputType="textPassword"
         android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/editTextUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/img_btn_showPasswordSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/baseline_visibility_24"/>
 
     <CheckBox
         android:id="@+id/checkboxRememberMe"

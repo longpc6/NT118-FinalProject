@@ -109,13 +109,13 @@
         android:background="@drawable/customedittext"
         android:hint="@string/Password"
         android:drawableStart="@drawable/ic_password"
-        android:drawableEnd="@drawable/ic_eyes"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/editTextEmail"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/editConfirmpass"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <EditText
         android:id="@+id/editConfirmpass"
         android:layout_width="300dp"
@@ -123,7 +123,6 @@
         android:background="@drawable/customedittext"
         android:hint="@string/Confirm_Password"
         android:drawableStart="@drawable/ic_password"
-        android:drawableEnd="@drawable/ic_eyes"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/editTextPassword"
         android:layout_marginTop="10dp"
@@ -131,6 +130,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ImageButton
+        android:id="@+id/img_btn_showPasswordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/baseline_visibility_24"/>
+
+    <ImageButton
+        android:id="@+id/img_btn_showConfirmSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/editConfirmpass"
+        app:layout_constraintEnd_toEndOf="@+id/editConfirmpass"
+        app:layout_constraintTop_toTopOf="@+id/editConfirmpass"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/baseline_visibility_24"/>
 
     <Button
         android:id="@+id/buttonSignUp"
