@@ -4,4 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashBoardactivity"/>
+    tools:context=".DashBoardactivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2Main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager2Main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="20dp"
+        android:elevation="5dp"
+        app:cardBackgroundColor="@color/white_A700_3f">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nav_shape"
+            app:menu="@menu/menu_bottom_nav"
+            app:itemIconTint="@color/color_item_bottom_nav"
+            app:labelVisibilityMode="unlabeled"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
