@@ -27,7 +27,7 @@
             android:name=".forgotpassword"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name=".DashBoardactivity"
             android:exported="false" />
         <activity
             android:name=".Signupactivity"

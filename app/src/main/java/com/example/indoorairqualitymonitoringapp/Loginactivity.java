@@ -4,13 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import com.google.gson.JsonObject;
-import com.example.indoorairqualitymonitoringapp.ApiService;
+
 import android.content.Intent;
 
 public class Loginactivity extends AppCompatActivity {
@@ -121,7 +119,7 @@ public class Loginactivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     JsonObject tokenResponse = response.body();
                     String accessToken = tokenResponse.get("access_token").getAsString();
-                    Intent intent = new Intent(Loginactivity.this, dashboard.class);
+                    Intent intent = new Intent(Loginactivity.this, DashBoardactivity.class);
                     startActivity(intent);
 
                 } else {
