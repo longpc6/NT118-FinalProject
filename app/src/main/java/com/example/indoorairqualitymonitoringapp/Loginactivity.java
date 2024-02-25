@@ -120,6 +120,8 @@ public class Loginactivity extends AppCompatActivity {
                     JsonObject tokenResponse = response.body();
                     String accessToken = tokenResponse.get("access_token").getAsString();
                     Intent intent = new Intent(Loginactivity.this, DashBoardactivity.class);
+                    intent.putExtra("accessToken", accessToken);
+                    intent.putExtra("username",username);
                     startActivity(intent);
 
                 } else {

@@ -11,6 +11,16 @@
     <string name="Confirm_Password">Confirm Password</string>
     <string name="btn_SignIn">Sign in</string>
     <string name="btn_SignUp">Sign up</string>
+    <string name="Humidity">Humidity</string>
+    <string name="Rainfall">Rainfall</string>
+    <string name="Wingspeed">Wind speed</string>
+    <string name="btn_Show">Show</string>
+    <string name="btnChangeUnit">Convert Temparature Units</string>
+    <string name="btnAbout">About</string>
+    <string name="btnLogout">Log Out</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

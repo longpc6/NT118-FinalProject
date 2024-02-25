@@ -12,4 +12,11 @@
     <string name="Confirm_Password">Xác nhận mật khẩu</string>
     <string name="btn_SignIn">Đăng nhập</string>
     <string name="btn_SignUp">Đăng ký</string>
+    <string name="Humidity">Độ ẩm</string>
+    <string name="Rainfall">Lượng mưa</string>
+    <string name="Wingspeed">Tốc độ gió</string>
+    <string name="btn_Show">Hiển thị</string>
+    <string name="btnChangeUnit">Đổi đơn vị nhiệt độ</string>
+    <string name="btnAbout">Giới thiệu</string>
+    <string name="btnLogout">Đăng xuất</string>
 </resources>

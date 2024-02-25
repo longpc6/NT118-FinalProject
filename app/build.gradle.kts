@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.indoorairqualitymonitoringapp"
-        minSdk = 34
+        minSdk = 33
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -44,8 +44,13 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:okhttp:4.9.1")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation ("com.google.android.gms:play-services-maps:17.0.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.preference:preference:1.2.1")
+    implementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("org.osmdroid:osmdroid-android:6.0.2")
 
-
-
+    implementation("com.github.blackfizz:eazegraph:1.2.2@aar")
+    implementation("com.nineoldandroids:library:2.4.0")
 
 }

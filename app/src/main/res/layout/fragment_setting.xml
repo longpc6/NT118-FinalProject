@@ -3,18 +3,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/rectangle_gradient_s_bluegray_800_e_gray_900"
+    android:elevation="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".dashboardelements.SettingFragment">
+    tools:context=".SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Setting Fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/User_IMG"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/user_img22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20sp"/>
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/nameuser"
+        android:layout_width="194dp"
+        android:layout_height="54dp"
+        android:text="--"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/User_IMG"
+        app:layout_constraintStart_toStartOf="@+id/User_IMG"
+        app:layout_constraintTop_toBottomOf="@+id/User_IMG"
+        tools:ignore="MissingConstraints"
+        android:gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnChangeUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/retangle71"
+        android:drawableStart="@drawable/changeunitic"
+        android:drawablePadding="10dp"
+        android:gravity="start"
+        android:padding="@dimen/_20pxh"
+        android:text="@string/btnChangeUnit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameuser"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeUnit"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeUnit"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangeUnit"
+        android:gravity="start"
+        android:padding="@dimen/_20pxh"
+        android:text="@string/btnAbout"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:background="@drawable/retangle71"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/aboutic"
+        android:drawablePadding="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="@dimen/_20pxh"
+        android:text="@string/btnLogout"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnAbout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout"
+        tools:ignore="MissingConstraints"
+        android:textAllCaps="false"
+        android:background="@drawable/retangle71"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/logoutic"
+        android:drawablePadding="10dp"/>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

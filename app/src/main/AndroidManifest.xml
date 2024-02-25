@@ -3,32 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label=" "
+        android:label="Group2 Final Project"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IndoorAirQualityMonitoringApp"
         tools:targetApi="31">
         <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".DashBoardactivity"/>
+        <activity
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".web"
-            android:exported="false" />
-        <activity
-            android:name=".signinactivity"
-            android:exported="false" />
-        <activity
-            android:name=".forgotpassword"
-            android:exported="false" />
-        <activity
             android:name=".DashBoardactivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Loginactivity"/>
         <activity
             android:name=".Signupactivity"
             android:exported="false" />
