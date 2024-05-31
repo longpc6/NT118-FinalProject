@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/it_Home"
+        android:title="Home"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/nav_home"/>
+
+    <item
+        android:id="@+id/it_Weather"
+        android:title="Weather"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/nav_weather"/>
+
+    <item
+        android:id="@+id/it_Graph"
+        android:title="Graph"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/nav_graph"/>
+
+    <item
+        android:id="@+id/it_Setting"
+        android:title="Setting"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/nav_setting"/>
+</menu>

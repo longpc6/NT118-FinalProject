@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Indoor Air Quality Monitoring App</string>
+    <string name="SIGN_IN">ĐĂNG NHẬP</string>
+    <string name="Username">Tên đăng nhập</string>
+    <string name="Password">Mật Khẩu</string>
+    <string name="Forgot_Password">Quên mật Khẩu</string>
+    <string name="Remember_Me">Nhớ mật Khẩu</string>
+    <string name="Continue_with_google">Đăng nhập bằng Google</string>
+    <string name="Or">Hoặc</string>
+    <string name="SIGN_UP">ĐĂNG KÝ</string>
+    <string name="Confirm_Password">Xác nhận mật khẩu</string>
+    <string name="btn_SignIn">Đăng nhập</string>
+    <string name="btn_SignUp">Đăng ký</string>
+    <string name="Humidity">Độ ẩm</string>
+    <string name="Rainfall">Lượng mưa</string>
+    <string name="Wingspeed">Tốc độ gió</string>
+    <string name="btn_Show">Hiển thị</string>
+    <string name="btnChangeUnit">Đổi đơn vị nhiệt độ</string>
+    <string name="btnAbout">Giới thiệu</string>
+    <string name="btnLogout">Đăng xuất</string>
+</resources>
